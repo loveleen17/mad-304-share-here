@@ -30,8 +30,8 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
 
-        username=findViewById(R.id.username);
-        password=findViewById(R.id.password);
+        username=findViewById(R.id.txt1);
+        password=findViewById(R.id.txt2);
         lastname=findViewById(R.id.lastname);
         firstname=findViewById(R.id.firstname);
         rb = (RadioGroup) findViewById(R.id.radioGroup);
@@ -42,8 +42,8 @@ public class Registration extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int selected=rb.getCheckedRadioButtonId();
-                RadioButton r=(RadioButton)findViewById(selected);
+                int selectedId=rb.getCheckedRadioButtonId();
+                RadioButton r=(RadioButton)findViewById(selectedId);
                 uname=username.getText().toString();
                 pass=password.getText().toString();
                 lname=lastname.getText().toString();
@@ -68,7 +68,7 @@ public class Registration extends AppCompatActivity {
 
             try {
 
-                url = new URL("http://10.0.2.2:27897/WebApplication1/Myapp/main/registration&"+typee+"&"+uname+"&"+pass+"&"+lname+"&"+fname+"&"+emaill+"");
+                url = new URL("http://192.168.1.6:8888/internship/Myapp/main/registration&"+typee+"&"+uname+"&"+pass+"&"+lname+"&"+fname+"&"+emaill+"");
                 HttpURLConnection client = null;
                 client = (HttpURLConnection) url.openConnection();
                 client.setRequestMethod("GET");
