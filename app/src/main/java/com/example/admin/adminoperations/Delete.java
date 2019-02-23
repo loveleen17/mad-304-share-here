@@ -104,7 +104,7 @@ public class Delete extends AppCompatActivity {
 
             try {
 
-                url = new URL("http://192.168.2.26:8080/internship/mobile/main/delete&"+c_id);
+                url = new URL("http://192.168.1.6:8888/internship/mobile/Myapp/delete&"+c_id);
                 HttpURLConnection client = null;
                 client = (HttpURLConnection) url.openConnection();
                 client.setRequestMethod("GET");

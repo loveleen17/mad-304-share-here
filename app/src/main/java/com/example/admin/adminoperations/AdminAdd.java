@@ -111,7 +111,7 @@ String cate,desc;
 
 
                     InputStream fileInputStream = getContentResolver().openInputStream(sourceFileUri);
-                    URL url = new URL("http://192.168.2.26:8080/internship/mobile/files/upload");
+                    URL url = new URL("http://192.168.2.6:8888/internship/mobile/files/upload");
 
 
                     conn = (HttpURLConnection) url.openConnection();

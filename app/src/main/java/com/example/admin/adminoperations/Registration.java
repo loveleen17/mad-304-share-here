@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,8 +19,9 @@ import java.net.URL;
 
 public class Registration extends AppCompatActivity {
 
-    EditText type,username,password,lastname,firstname,email;
+    EditText username,password,lastname,firstname,email;
     Button signup;
+    RadioGroup rb;
 
     String uname,pass,typee,fname,lname,emaill;
     @Override
@@ -26,11 +29,12 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        type=findViewById(R.id.type);
+
         username=findViewById(R.id.username);
         password=findViewById(R.id.password);
         lastname=findViewById(R.id.lastname);
         firstname=findViewById(R.id.firstname);
+        rb = (RadioGroup) findViewById(R.id.radioGroup);
 
         email=findViewById(R.id.email);
 
@@ -38,12 +42,14 @@ public class Registration extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                typee=type.getText().toString();
+                int selected=rb.getCheckedRadioButtonId();
+                RadioButton r=(RadioButton)findViewById(selected);
                 uname=username.getText().toString();
                 pass=password.getText().toString();
                 lname=lastname.getText().toString();
                 fname=firstname.getText().toString();
                 emaill=email.getText().toString();
+                typee=r.getText().toString();
                 new MyTask().execute();
             }
         });

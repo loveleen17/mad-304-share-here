@@ -152,7 +152,7 @@ class ListAdapter extends ArrayAdapter<Item> {
 
            content.setText(p.content);
            des.setText(p.desc);
-                new DownloadImageTask(im, "http://192.168.2.26:8080/internship/mobile/files/"+p.image).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                new DownloadImageTask(im, "http://192.168.1.6:8888/internship/Myapp/files/"+p.image).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
 
         }

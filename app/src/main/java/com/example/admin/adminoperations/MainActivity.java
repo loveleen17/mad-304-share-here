@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
 
-                url = new URL("http://10.0.2.2:27897/WebApplication1/Myapp/main/login&"+ "'" + uname + "'"+ "&'" +pass+"'&'"+type+"'");
+                url = new URL("http://192.168.1.6:8888/internship/Myapp/main/login&"+ "'" + uname + "'"+ "&'" +pass+"'&'"+type+"'");
                 HttpURLConnection client = null;
                 client = (HttpURLConnection) url.openConnection();
                 client.setRequestMethod("GET");
